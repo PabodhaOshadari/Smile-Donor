@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SmileDonor</string>
     <string name="title1">SmileDonor</string>
-    <string name="amount">Add Donated Amount</string>
+    <string name="amount">Add Donated Amount(LKR)</string>
     <string name="join_now1">join now</string>
     <string name="Are_you">ARE YOU?</string>
     <string name="Home_Page">SmileDonor</string>

@@ -23,7 +23,7 @@ class MyDonationDetails : AppCompatActivity() {
 
         var btnNext = findViewById<Button>(R.id.button5)
         btnNext.setOnClickListener {
-            val intent = Intent(this,Home::class.java)
+            val intent = Intent(this,success::class.java)
             startActivity(intent)
         }
     }
