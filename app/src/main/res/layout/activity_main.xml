@@ -4,45 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backg"
-    android:backgroundTint="#1E1E1E"
-    android:backgroundTintMode="add"
-    android:visibility="visible"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/donate1"
-        android:layout_width="209dp"
-        android:layout_height="66dp"
-        android:background="#231E17"
-        android:backgroundTint="#C87A07"
-        android:text="@string/join_now1"
-        android:onClick="JoinNow"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873" />
+    android:background="@color/teal_200"
+    tools:context=".activities.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="405dp"
-        android:layout_height="102dp"
-        android:fontFamily="@font/font6"
-        android:text="@string/Home_Page"
-        android:textAlignment="center"
-        android:textColor="@color/design_default_color_background"
-        android:textSize="@dimen/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share your food-Be a smile keeper"
+        android:textColor="#120E0E"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/donate1"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.451" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="301dp"
+        android:layout_height="303dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnInsertData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bbi" />
+
+    <Button
+        android:id="@+id/btnInsertData"
+        android:layout_width="157dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="36dp"
+        android:width="25dp"
+        android:text="DONATE NOW"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnFetchData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnFetchData"
+        android:layout_width="158dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="16dp"
+        android:text="View Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
