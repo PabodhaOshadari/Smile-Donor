@@ -12,6 +12,9 @@
         android:theme="@style/Theme.SmileDoner"
         tools:targetApi="31">
         <activity
+            android:name=".success"
+            android:exported="false" />
+        <activity
             android:name=".card_fetch"
             android:exported="false" />
         <activity
