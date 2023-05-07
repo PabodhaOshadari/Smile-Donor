@@ -4,55 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_200"
+    android:background="#4cb7a5"
+    android:backgroundTint="#4cb7a5"
     tools:context=".activities.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Share your food-Be a smile keeper"
-        android:textColor="#120E0E"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:id="@+id/textView"
+        android:layout_width="409dp"
+        android:layout_height="74dp"
+        android:gravity="center"
+        android:text="Transport Details"
+        android:textAlignment="center"
+        android:textColor="#221F1F"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="301dp"
-        android:layout_height="303dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnInsertData"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bbi" />
+        app:layout_constraintVertical_bias="0.029" />
 
     <Button
         android:id="@+id/btnInsertData"
-        android:layout_width="157dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="36dp"
-        android:width="25dp"
-        android:text="DONATE NOW"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnFetchData"
+        android:layout_width="371dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#2196F3"
+        android:text="Transport  Details Form"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
 
     <Button
         android:id="@+id/btnFetchData"
-        android:layout_width="158dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="16dp"
-        android:text="View Data"
+        android:layout_width="374dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="75dp"
+        android:backgroundTint="#2196F3"
+        android:text="Driver's Log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsertData"
+        app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="404dp"
+        android:layout_height="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.273"
+        app:srcCompat="@drawable/logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

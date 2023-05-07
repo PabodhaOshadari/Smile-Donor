@@ -1,5 +1,6 @@
 package com.example.fdonation.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -56,7 +57,7 @@ class UserDetailsActivity:AppCompatActivity() {
 
         mTask.addOnSuccessListener {
             Toast.makeText(this,"Donor Details deleted",Toast.LENGTH_LONG).show()
-            val intent= Intent(this,FetchingActivity::class.java)
+            val intent= Intent(this, FetchingActivity::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener{error ->
@@ -84,6 +85,7 @@ class UserDetailsActivity:AppCompatActivity() {
         tvDate.text=intent.getStringExtra("date")
     }
 
+    @SuppressLint("MissingInflatedId")
     private fun openUpdateDialog(
         userId:String,
         foodName:String
