@@ -27,12 +27,64 @@
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
+            android:exported="false"/>
+         <activity
+            android:name=".home2"
+            android:exported="false" />
+        <activity
+            android:name=".success"
+            android:exported="false" />
+        <activity
+            android:name=".card_fetch"
+            android:exported="false" />
+        <activity
+            android:name=".home_new"
+            android:exported="false" />
+        <activity
+            android:name=".Summary"
+            android:exported="false" />
+        <activity
+            android:name=".ViewDonations"
+            android:exported="false" />
+        <activity
+            android:name=".MyDonationDetails"
+            android:exported="false" />
+        <activity
+            android:name=".AddAmount"
+            android:exported="false" />
+        <activity
+            android:name=".ManageCard"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentDetails"
+            android:exported="false" />
+        <activity
+            android:name=".cashTransfer"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseDonte"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".SmileDonor"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 
