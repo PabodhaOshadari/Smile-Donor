@@ -15,14 +15,22 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 
 
+
+
+
 class home_new : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_new)
 
+        var btnNext = findViewById<Button>(R.id.donateNow)
+        btnNext.setOnClickListener {
+            val intent = Intent(this,ChooseDonte::class.java)
+            startActivity(intent)
+        }
+    }
 
-
-        val drawarLayout = findViewById<DrawerLayout>(R.id.drawarLayout)
+        /*val drawarLayout = findViewById<DrawerLayout>(R.id.drawarLayout)
         val imgMenu = findViewById<ImageView>(R.id.imgMenu)
 
         val navView = findViewById<NavigationView>(R.id.navDawar)
@@ -30,21 +38,19 @@ class home_new : AppCompatActivity() {
         imgMenu.setOnClickListener {
             drawarLayout.openDrawer(GravityCompat.START)
         }
+        val navController = Navigation.findNavController(this,R.id.fragment)
+        NavigationUI.setupWithNavController(navView,navController)
 
-        val btnNext = findViewById<Button>(R.id.donateNow)
-        btnNext.setOnClickListener {
-            val intent = Intent(this,ChooseDonte::class.java)
-            startActivity(intent)
-        }
-
-
-
-    }
+        val textTitle = findViewById<TextView>(R.id.title)
+        navController
+            .addOnDestinationChangedListener { controller, destination, arguments ->
+                textTitle.text = destination.label
+            }
 
 
-
-    }
+    }*/
 
 
 
+}
 

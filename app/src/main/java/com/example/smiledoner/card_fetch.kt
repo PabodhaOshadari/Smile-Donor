@@ -58,11 +58,11 @@ class card_fetch : AppCompatActivity() {
                             val intent = Intent(this@card_fetch, ManageCard::class.java)
 
                             //put extras
-                            intent.putExtra("empId", empList[position].empID)
+                            intent.putExtra("empId", empList[position].empId)
                             intent.putExtra("empName", empList[position].empName)
                             intent.putExtra("empNumber", empList[position].empNo)
                             intent.putExtra("empDate", empList[position].empDate)
-                            intent.putExtra("empCVV", empList[position].empCvv)
+                            intent.putExtra("empCVV", empList[position].empCVV)
                             startActivity(intent)
                         }
 

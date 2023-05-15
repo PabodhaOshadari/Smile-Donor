@@ -41,6 +41,7 @@ class ManageCard : AppCompatActivity() {
             )
         }
 
+
         btnDelete.setOnClickListener {
             deleteRecord(
                 intent.getStringExtra("empName").toString()
@@ -49,12 +50,13 @@ class ManageCard : AppCompatActivity() {
     }
 
     private fun openUpdateDialog(
-        empId: String,
-        empName: String
-    ) {
+        empId:String,
+        empName:String
+    )
+    {
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
-        val mDialogView = inflater.inflate(R.layout.activity_update_payment_details, null)
+        val mDialogView = inflater.inflate(R.layout.activity_update_payment_details,null)
 
         mDialog.setView(mDialogView)
 
@@ -63,7 +65,11 @@ class ManageCard : AppCompatActivity() {
         val etEmpDate = mDialogView.findViewById<EditText>(R.id.card_date)
         val etEmpCvv = mDialogView.findViewById<EditText>(R.id.card_cvv)
 
-        val btnUpdateData = mDialogView.findViewById<Button>(R.id.button)
+        val btnUpdate = mDialogView.findViewById<Button>(R.id.button)
+
+
+
+        var empId=intent.getStringExtra("empId").toString()
 
         etEmpName.setText(intent.getStringExtra("empName").toString())
         etEmpNo.setText(intent.getStringExtra("empNumber").toString())
@@ -72,10 +78,11 @@ class ManageCard : AppCompatActivity() {
 
 
 
+
         val alertDialog = mDialog.create()
         alertDialog.show()
 
-        btnUpdateData.setOnClickListener {
+        btnUpdate.setOnClickListener {
             updateEmpData(
                 empId,
                 etEmpName.text.toString(),
@@ -98,44 +105,104 @@ class ManageCard : AppCompatActivity() {
     }
 
     private fun updateEmpData(
-        empID: String,
+        empId:String,
         empName: String,
         empNumber: String,
-        empDate: String,
-        empCvv: String
-    ) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("cards").child(empID)
-        val empInfo = cardModel(empID, empName, empNumber, empDate, empCvv)
-        dbRef.setValue(empInfo)
+        empDate:String,
+        empCVV:String
+
+    )
+    {
+        val dbRef = FirebaseDatabase.getInstance().getReference("cards").child(empId)    //we are not getting reference to the hall data base
+        val payinfo = cardModel(empId,empName,empNumber,empDate,empCVV)
+        dbRef.setValue(payinfo)
+
     }
 
+    /*private fun openUpdateDialog(
+        empId:String,
+        empName:String
+    )
+    {
+        val mDialog = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val mDialogView = inflater.inflate(R.layout.activity_update_payment_details,null)
 
-        private fun initView() {
-            tvEmpName = findViewById(R.id.cardname2)
-            tvEmpNo = findViewById(R.id.no2)
-            tvEmpDate = findViewById(R.id.expdate2)
-            tvEmpcvv = findViewById(R.id.cvv2)
+        mDialog.setView(mDialogView)
 
-            btnUpdate = findViewById(R.id.btnUpdate)
-            btnDelete = findViewById(R.id.button2)
+        val etEmpName = mDialogView.findViewById<EditText>(R.id.card_name2)
+        val etEmpNo = mDialogView.findViewById<EditText>(R.id.card_number2)
+        val etEmpDate = mDialogView.findViewById<EditText>(R.id.card_date)
+        val etEmpCvv = mDialogView.findViewById<EditText>(R.id.card_cvv)
+
+        val btnUpdate = mDialogView.findViewById<Button>(R.id.button)
 
 
+
+        var empId=intent.getStringExtra("empId").toString()
+
+        etEmpName.setText(intent.getStringExtra("empName").toString())
+        etEmpNo.setText(intent.getStringExtra("empNumber").toString())
+        etEmpDate.setText(intent.getStringExtra("empDate").toString())
+        etEmpCvv.setText(intent.getStringExtra("empCVV").toString())
+
+
+
+
+        val alertDialog = mDialog.create()
+        alertDialog.show()
+
+        btnUpdate.setOnClickListener {
+            updateEmpData(
+                empId,
+                etEmpName.text.toString(),
+                etEmpNo.text.toString(),
+                etEmpDate.text.toString(),
+                etEmpCvv.text.toString()
+
+            )
+
+            Toast.makeText(applicationContext, "Card Detailes Updated", Toast.LENGTH_LONG).show()
+
+            //we are setting updated data to our textviews
+            tvEmpName.text = etEmpName.text.toString()
+            tvEmpNo.text = etEmpNo.text.toString()
+            tvEmpDate.text = etEmpDate.text.toString()
+            tvEmpcvv.text = etEmpCvv.text.toString()
+
+            alertDialog.dismiss()
         }
+    }
 
-        private fun setValuesToViews() {
+    private fun updateEmpData(
+        empId:String,
+        empName: String,
+        empNumber: String,
+        empDate:String,
+        empCVV:String
 
-            tvEmpName.text = intent.getStringExtra("empName")
-            tvEmpNo.text = intent.getStringExtra("empNumber")
+    )
+    {
+        val dbRef = FirebaseDatabase.getInstance().getReference("cards").child(empId)    //we are not getting reference to the hall data base
+        val updates = hashMapOf<String,Any>(
+            "empName" to empName,
+            "empNumber" to empNumber,
+            "empDate" to empDate,
+            "empCVV" to empCVV
+        )
+        dbRef.updateChildren(updates)
 
-            tvEmpDate.text = intent.getStringExtra("empDate")
-            tvEmpcvv.text = intent.getStringExtra("empCVV")
 
-        }
+    //val payinfo = cardModel(empId,empName,empNumber,empDate,empCVV)
+        //dbRef.setValue(payinfo)
+
+    }*/
+
 
     private fun deleteRecord(
-        empID: String
+        empId: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("cards").child(empID)
+        val dbRef = FirebaseDatabase.getInstance().getReference("cards").child(empId)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
@@ -149,8 +216,38 @@ class ManageCard : AppCompatActivity() {
         }
     }
 
-}
 
+
+
+
+
+    private fun initView() {
+        tvEmpName = findViewById(R.id.cardname2)
+        tvEmpNo = findViewById(R.id.no2)
+        tvEmpDate = findViewById(R.id.expdate2)
+        tvEmpcvv = findViewById(R.id.cvv2)
+
+        btnUpdate = findViewById(R.id.btnUpdate)
+        btnDelete = findViewById(R.id.button2)
+
+
+    }
+
+    private fun setValuesToViews() {
+
+        tvEmpName.text = intent.getStringExtra("empName")
+        tvEmpNo.text = intent.getStringExtra("empNumber")
+
+        tvEmpDate.text = intent.getStringExtra("empDate")
+        tvEmpcvv.text = intent.getStringExtra("empCVV")
+
+    }
+
+
+
+
+
+}
 
 
 
