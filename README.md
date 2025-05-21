@@ -1,3 +1,19 @@
+This mobile application was developed as part of our 2nd-year Mobile Application Development (MAD) module. The app allows users to donate and request essential items such as food, clothes, medicine, books, and money through a centralized platform.
+
+Built using Kotlin in IntelliJ IDEA, the app integrates with Firebase Realtime Database for real-time data syncing and secure storage. The project demonstrates our understanding of mobile app development principles, user-friendly interface design, and real-time backend integration using modern Android development tools.
+Key Features:
+
+    User registration and login
+
+    Post donation offers (food, clothes, books, medicine, money)
+
+    View and request available donations
+
+    Real-time updates using Firebase Realtime Database
+
+    Clean and intuitive Kotlin-based UI
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
